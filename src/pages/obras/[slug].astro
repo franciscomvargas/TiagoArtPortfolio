@@ -1,0 +1,128 @@
+---
+import { Picture } from 'astro:assets';
+import Base from '../../layouts/Base.astro';
+import { categories, site } from '../../config';
+import { pieces, type Piece } from '../../lib/pieces';
+
+export function getStaticPaths() {
+  return pieces.map((piece) => ({
+    params: { slug: piece.slug },
+    props: { piece },
+  }));
+}
+
+interface Props {
+  piece: Piece;
+}
+
+const { piece } = Astro.props;
+const index = pieces.findIndex((item) => item.slug === piece.slug);
+const previous = pieces[index - 1];
+const next = pieces[index + 1];
+const label = categories[piece.category];
+const platform = piece.source.includes('tiktok') ? 'TikTok' : 'Instagram';
+const base = Astro.site ?? new URL(site.siteUrl);
+const ogImage = new URL(`/og/${piece.slug}.jpg`, base).href;
+const canonical = new URL(Astro.url.pathname, base).href;
+const mailto = `mailto:${site.email}?subject=${encodeURIComponent(`Encomenda — ${piece.title}`)}&body=${encodeURIComponent(`Olá Tiago,\n\nVi a peça "${piece.title}" no site e gostaria de saber mais sobre disponibilidade, prazo e envio.\n\nObrigado(a),`)}`;
+const artworkLd = {
+  '@context': 'https://schema.org',
+  '@type': 'VisualArtwork',
+  name: piece.title,
+  creator: {
+    '@type': 'Person',
+    name: site.name,
+    url: base.href,
+  },
+  image: ogImage,
+  dateCreated: piece.year,
+  artform: label,
+  description: piece.story,
+  url: canonical,
+};
+---
+
+<Base
+  title={`${piece.title} — ${label} | Tiago Costa`}
+  description={piece.story}
+  image={`/og/${piece.slug}.jpg`}
+  type="article"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(artworkLd)} />
+  </Fragment>
+  <div class="container page-head">
+    <a class="back-link" href="/#obras">← Todas as obras</a>
+  </div>
+  <article class="piece-page">
+    <div class="container piece-layout">
+      <div class="piece-gallery">
+        {piece.gallery.map((img, imageIndex) => (
+          <figure>
+            <Picture
+              src={img}
+              formats={['avif', 'webp']}
+              widths={[480, 540]}
+              sizes="(max-width: 980px) 90vw, 52vw"
+              alt={`${piece.title} — ${label}`}
+              loading={imageIndex === 0 ? 'eager' : 'lazy'}
+              fetchpriority={imageIndex === 0 ? 'high' : 'auto'}
+            />
+          </figure>
+        ))}
+      </div>
+      <div class="piece-info">
+        <p class="piece-kicker">{label} · {piece.year}</p>
+        <h1 class="piece-title">{piece.title}</h1>
+        <p class="piece-story">{piece.story}</p>
+        <dl class="piece-specs">
+          <div>
+            <dt>Técnica</dt>
+            <dd>{piece.technique}</dd>
+          </div>
+          <div>
+            <dt>Estado</dt>
+            <dd>{piece.status}</dd>
+          </div>
+          {piece.dimensions && (
+            <div>
+              <dt>Dimensões</dt>
+              <dd>{piece.dimensions}</dd>
+            </div>
+          )}
+          <div>
+            <dt>Ano</dt>
+            <dd>{piece.year}</dd>
+          </div>
+        </dl>
+        <div class="piece-cta">
+          <a class="button button--solid" href={mailto}>Encomendar peça semelhante</a>
+          <p class="piece-note">
+            Peça única. Disponível para encomenda ou adaptação. Envio para Portugal e UE.
+          </p>
+        </div>
+        <p class="piece-source">
+          <a href={piece.source} target="_blank" rel="noopener noreferrer">Ver no {platform} ↗</a>
+        </p>
+      </div>
+    </div>
+  </article>
+  <nav class="container piece-nav" aria-label="Outras obras">
+    {previous ? (
+      <a href={`/obras/${previous.slug}/`}>
+        <small>Anterior</small>
+        <strong>← {previous.title}</strong>
+      </a>
+    ) : (
+      <span></span>
+    )}
+    {next ? (
+      <a href={`/obras/${next.slug}/`}>
+        <small>Seguinte</small>
+        <strong>{next.title} →</strong>
+      </a>
+    ) : (
+      <span></span>
+    )}
+  </nav>
+</Base>

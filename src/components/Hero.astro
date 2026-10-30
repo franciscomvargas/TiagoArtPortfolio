@@ -1,0 +1,45 @@
+---
+import { Picture } from 'astro:assets';
+import { categories, site } from '../config';
+import type { Piece } from '../lib/pieces';
+
+interface Props {
+  piece: Piece;
+}
+
+const { piece } = Astro.props;
+const mailto = `mailto:${site.email}?subject=${encodeURIComponent('Encomenda — peça personalizada')}&body=${encodeURIComponent('Olá Tiago,\n\nGostaria de saber mais sobre uma peça personalizada.\n\nObrigado(a),')}`;
+---
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <p class="eyebrow">Cerâmica · Restauro · Arte</p>
+      <h1>Tiago<br /><em>Costa</em></h1>
+      <p class="hero-lead">
+        Peças únicas em cerâmica, restauro de objetos com memória, pintura e
+        ilustração. Encomendas personalizadas, feitas à mão em Oliveira de Azeméis.
+      </p>
+      <div class="hero-actions">
+        <a class="button button--solid" href="#obras">Ver obras</a>
+        <a class="button" href={mailto}>Encomendar</a>
+      </div>
+      <p class="hero-foot">Peças únicas · Encomendas para Portugal e UE</p>
+    </div>
+    <div class="hero-media">
+      <div class="hero-frame">
+        <Picture
+          src={piece.coverImage}
+          formats={['avif', 'webp']}
+          widths={[360, 540]}
+          sizes="(max-width: 980px) 90vw, 460px"
+          alt={`${piece.title}, ${categories[piece.category].toLowerCase()} em cerâmica`}
+          loading="eager"
+          fetchpriority="high"
+        />
+      </div>
+      <span class="hero-tag">Peça única · {piece.year}</span>
+      <p class="hero-caption">{piece.title} · {categories[piece.category]}</p>
+    </div>
+  </div>
+</section>

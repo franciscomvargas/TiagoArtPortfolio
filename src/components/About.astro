@@ -1,0 +1,51 @@
+---
+import { Picture } from 'astro:assets';
+import { image } from '../lib/images';
+import { site } from '../config';
+
+const atelier = image('atelier.jpg');
+---
+
+<section class="section" id="atelier">
+  <div class="container about-inner">
+    <div class="about-media" data-reveal>
+      <Picture
+        src={atelier}
+        formats={['avif', 'webp']}
+        widths={[320, 480, 540]}
+        sizes="(max-width: 980px) 90vw, 42vw"
+        alt="Tiago Costa no ateliê, junto a uma peça em cerâmica"
+        loading="lazy"
+      />
+    </div>
+    <div class="about-copy" data-reveal>
+      <p class="eyebrow">No ateliê</p>
+      <h2>Matéria, gesto<br />e memória.</h2>
+      <p>
+        Tiago Costa é artista plástico e trabalha a cerâmica, o restauro, a pintura
+        e a ilustração em Oliveira de Azeméis. O ateliê nasce da ideia de que nenhum
+        objeto está realmente perdido: há sempre uma forma de o devolver à vida.
+      </p>
+      <p>
+        Entre peças antigas recuperadas e objetos criados de raiz, o processo é
+        o mesmo — observar, experimentar e trabalhar com as mãos até a peça
+        encontrar o seu lugar.
+      </p>
+      <img class="about-signature-img" src={site.signature} alt="Assinatura de Tiago Costa" width="180" height="98" loading="lazy" />
+      <div class="about-facts">
+        <div class="about-fact">
+          <span>Ateliê</span>
+          <strong>{site.locationShort}</strong>
+        </div>
+        <div class="about-fact">
+          <span>Técnicas</span>
+          <strong>Cerâmica · Restauro · Pintura · Ilustração</strong>
+        </div>
+        <div class="about-fact">
+          <span>Encomendas</span>
+          <strong>Portugal e UE</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,292 @@
+[
+  {
+    "slug": "coral",
+    "title": "Coral",
+    "category": "restauro",
+    "year": 2025,
+    "technique": "Cerâmica restaurada",
+    "status": "Sob consulta",
+    "cover": "coral/01.jpg",
+    "images": [
+      "coral/01.jpg"
+    ],
+    "story": "Uma peça antiga devolvida à vida. Os elementos em falta foram reconstruídos à mão, respeitando a forma e o carácter original.",
+    "source": "https://www.instagram.com/reel/DKagtgrI9Vk/",
+    "dimensions": null
+  },
+  {
+    "slug": "galhos",
+    "title": "Galhos",
+    "category": "ceramica",
+    "year": 2024,
+    "technique": "Escultura em cerâmica",
+    "dimensions": "80 cm",
+    "status": "Sob consulta",
+    "cover": "galhos/01.jpg",
+    "images": [
+      "galhos/01.jpg",
+      "galhos/02.jpg"
+    ],
+    "story": "Uma escultura de 80 cm que cresce como uma árvore imaginária. Cada ramo é construído e pintado à mão.",
+    "source": "https://www.tiktok.com/@tiagocost_art/video/7452687973579083030"
+  },
+  {
+    "slug": "terrina",
+    "title": "Terrina",
+    "category": "restauro",
+    "year": 2025,
+    "technique": "Cerâmica restaurada",
+    "status": "Sob consulta",
+    "cover": "terrina/01.jpg",
+    "images": [
+      "terrina/01.jpg"
+    ],
+    "story": "O restauro de uma terrina em cerâmica, devolvida ao serviço da mesa e da memória.",
+    "source": "https://www.instagram.com/reel/DKcisT8IXKM/",
+    "dimensions": null
+  },
+  {
+    "slug": "fruteira",
+    "title": "Fruteira",
+    "category": "restauro",
+    "year": 2025,
+    "technique": "Cerâmica restaurada",
+    "status": "Sob consulta",
+    "cover": "fruteira/01.jpg",
+    "images": [
+      "fruteira/01.jpg"
+    ],
+    "story": "Uma fruteira em cerâmica com várias peças partidas. Os elementos em falta foram recriados para devolver o todo.",
+    "source": "https://www.instagram.com/reel/DKc08CrojSV/",
+    "dimensions": null
+  },
+  {
+    "slug": "mascara",
+    "title": "Máscara",
+    "category": "personalizado",
+    "year": 2025,
+    "technique": "Cerâmica personalizada",
+    "status": "Sob consulta",
+    "cover": "mascara/01.jpg",
+    "images": [
+      "mascara/01.jpg",
+      "mascara/02.jpg"
+    ],
+    "story": "Uma cabeça em cerâmica com máscara de caveira. Uma peça personalizada, feita para um pedido muito específico.",
+    "source": "https://www.instagram.com/reel/DINHtf7IjK3/",
+    "dimensions": null
+  },
+  {
+    "slug": "aranha",
+    "title": "Aranha",
+    "category": "ceramica",
+    "year": 2025,
+    "technique": "Cerâmica personalizada",
+    "status": "Sob consulta",
+    "cover": "aranha/01.jpg",
+    "images": [
+      "aranha/01.jpg"
+    ],
+    "story": "Uma peça em cerâmica inspirada no universo do Homem-Aranha, criada por encomenda.",
+    "source": "https://www.instagram.com/reel/DINKuoUI7H-/",
+    "dimensions": null
+  },
+  {
+    "slug": "lobo",
+    "title": "Lobo",
+    "category": "personalizado",
+    "year": 2025,
+    "technique": "Cerâmica personalizada",
+    "status": "Sob consulta",
+    "cover": "lobo/01.jpg",
+    "images": [
+      "lobo/01.jpg"
+    ],
+    "story": "Uma peça em cerâmica com a silhueta de um lobo sob a lua. Personalizada para um cliente.",
+    "source": "https://www.instagram.com/reel/DINHR9aIcao/",
+    "dimensions": null
+  },
+  {
+    "slug": "tentaculo",
+    "title": "Tentáculo",
+    "category": "personalizado",
+    "year": 2025,
+    "technique": "Cerâmica personalizada",
+    "status": "Sob consulta",
+    "cover": "tentaculo/01.jpg",
+    "images": [
+      "tentaculo/01.jpg"
+    ],
+    "story": "Uma base para lata de graffiti colecionável, com tentáculos em cerâmica. Uma peça feita para ser vista de perto.",
+    "source": "https://www.instagram.com/reel/DJKV1jEsT2u/",
+    "dimensions": null
+  },
+  {
+    "slug": "atividade",
+    "title": "Atividade Sobrenatural",
+    "category": "personalizado",
+    "year": 2025,
+    "technique": "Cerâmica personalizada",
+    "status": "Sob consulta",
+    "cover": "atividade/01.jpg",
+    "images": [
+      "atividade/01.jpg"
+    ],
+    "story": "Um cinzeiro personalizado em cerâmica, com o símbolo \"Atividade Sobrenatural\".",
+    "source": "https://www.instagram.com/reel/DKX-N4pIlqg/",
+    "dimensions": null
+  },
+  {
+    "slug": "alien",
+    "title": "Alien",
+    "category": "ceramica",
+    "year": 2025,
+    "technique": "Cerâmica",
+    "status": "Sob consulta",
+    "cover": "alien/01.jpg",
+    "images": [
+      "alien/01.jpg"
+    ],
+    "story": "Uma cabeça alienígena em cerâmica, construída e pintada à mão.",
+    "source": "https://www.tiktok.com/@tiagocost_art/video/7467335754302131478",
+    "dimensions": null
+  },
+  {
+    "slug": "pizza",
+    "title": "Pratos Pizza",
+    "category": "ceramica",
+    "year": 2025,
+    "technique": "Cerâmica pintada à mão",
+    "status": "Sob consulta",
+    "cover": "pizza/01.jpg",
+    "images": [
+      "pizza/01.jpg",
+      "pizza/02.jpg"
+    ],
+    "story": "Um conjunto de pratos decorativos com tema de pizza, pintados à mão. Para uma mesa que não se leva demasiado a sério.",
+    "source": "https://www.tiktok.com/@tiagocost_art/video/7455862546449337622",
+    "dimensions": null
+  },
+  {
+    "slug": "luxo",
+    "title": "Do Lixo ao Luxo",
+    "category": "personalizado",
+    "year": 2024,
+    "technique": "Objeto de iluminação",
+    "status": "Sob consulta",
+    "cover": "luxo/01.jpg",
+    "images": [
+      "luxo/01.jpg",
+      "luxo/02.jpg"
+    ],
+    "story": "Um candeeiro criado a partir de materiais reaproveitados. Uma segunda vida para aquilo que já não servia.",
+    "source": "https://www.tiktok.com/@tiagocost_art/video/7425026867322817825",
+    "dimensions": null
+  },
+  {
+    "slug": "caveira",
+    "title": "Caveira",
+    "category": "pintura",
+    "year": 2025,
+    "technique": "Pintura acrílica sobre tela",
+    "status": "Sob consulta",
+    "cover": "caveira/01.jpg",
+    "images": [
+      "caveira/01.jpg"
+    ],
+    "story": "Uma pintura acrílica sobre tela, feita por encomenda. Cor, símbolo e um pouco de teatro.",
+    "source": "https://www.instagram.com/reel/DININXeoO2c/",
+    "dimensions": null
+  },
+  {
+    "slug": "tempo",
+    "title": "Tempo e Música",
+    "category": "pintura",
+    "year": 2024,
+    "technique": "Pintura acrílica sobre tela",
+    "status": "Sob consulta",
+    "cover": "tempo/01.jpg",
+    "images": [
+      "tempo/01.jpg"
+    ],
+    "story": "Uma composição pintada a acrílico, onde o tempo e a música se encontram.",
+    "source": "https://www.tiktok.com/@tiagocost_art/video/7407902340532964640",
+    "dimensions": null
+  },
+  {
+    "slug": "floresta",
+    "title": "Floresta",
+    "category": "pintura",
+    "year": 2023,
+    "technique": "Pintura acrílica sobre tela",
+    "dimensions": null,
+    "status": "Sob consulta",
+    "cover": "floresta/01.jpg",
+    "images": [
+      "floresta/01.jpg",
+      "floresta/02.jpg"
+    ],
+    "story": "Uma floresta suspensa num círculo, entre o verde e a noite. Pintura acrílica sobre tela.",
+    "source": "https://www.instagram.com/p/Coit6mLND3S/"
+  },
+  {
+    "slug": "canion",
+    "title": "Cânion",
+    "category": "pintura",
+    "year": 2023,
+    "technique": "Pintura acrílica sobre tela",
+    "dimensions": null,
+    "status": "Sob consulta",
+    "cover": "canion/01.jpg",
+    "images": [
+      "canion/01.jpg"
+    ],
+    "story": "Um cânion, uma queda de água e um céu estrelado. Pintura acrílica sobre tela.",
+    "source": "https://www.instagram.com/p/CoiuW8nt27x/"
+  },
+  {
+    "slug": "crepusculo",
+    "title": "Crepúsculo",
+    "category": "pintura",
+    "year": 2023,
+    "technique": "Pintura acrílica sobre tela",
+    "dimensions": null,
+    "status": "Sob consulta",
+    "cover": "crepusculo/01.jpg",
+    "images": [
+      "crepusculo/01.jpg"
+    ],
+    "story": "Pinheiros, uma cabana e um céu em transformação. Pintura acrílica sobre tela.",
+    "source": "https://www.instagram.com/p/Coiuh1nt0VV/"
+  },
+  {
+    "slug": "surfista",
+    "title": "Surfista em Chamas",
+    "category": "ilustracao",
+    "year": 2024,
+    "technique": "Ilustração digital",
+    "dimensions": null,
+    "status": "Sob consulta",
+    "cover": "surfista/01.jpg",
+    "images": [
+      "surfista/01.jpg"
+    ],
+    "story": "Um esqueleto surfista entre chamas, palmeiras e pôr do sol. Ilustração digital.",
+    "source": "https://www.instagram.com/p/C4OYV7hNg0o/"
+  },
+  {
+    "slug": "burros",
+    "title": "2 Burros ao Paleio",
+    "category": "ilustracao",
+    "year": 2024,
+    "technique": "Ilustração digital",
+    "dimensions": null,
+    "status": "Sob consulta",
+    "cover": "burros/01.jpg",
+    "images": [
+      "burros/01.jpg"
+    ],
+    "story": "Dois burros e lettering. Ilustração digital com um sentido de humor próprio.",
+    "source": "https://www.instagram.com/p/C3oGG_Ut4vz/"
+  }
+]

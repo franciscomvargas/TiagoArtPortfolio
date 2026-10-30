@@ -1,0 +1,31 @@
+---
+import { Picture } from 'astro:assets';
+import { categories } from '../config';
+import type { Piece } from '../lib/pieces';
+
+interface Props {
+  piece: Piece;
+  index: number;
+}
+
+const { piece, index } = Astro.props;
+const number = String(index + 1).padStart(2, '0');
+---
+
+<a class="piece-card" href={`/obras/${piece.slug}/`} data-category={piece.category} data-reveal>
+  <div class="piece-media">
+    <span class="piece-index">{number}</span>
+    <Picture
+      src={piece.coverImage}
+      formats={['avif', 'webp']}
+      widths={[320, 480, 540]}
+      sizes="(max-width: 720px) 76vw, (max-width: 980px) 42vw, 340px"
+      alt={`${piece.title} — ${categories[piece.category]} em cerâmica`}
+      loading="lazy"
+    />
+  </div>
+  <div class="piece-meta">
+    <span class="piece-title">{piece.title}</span>
+    <span class="piece-category">{categories[piece.category]}</span>
+  </div>
+</a>

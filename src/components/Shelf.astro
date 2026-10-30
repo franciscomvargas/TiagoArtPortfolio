@@ -1,0 +1,54 @@
+---
+import { categories } from '../config';
+import type { Piece } from '../lib/pieces';
+import PieceCard from './PieceCard.astro';
+
+interface Props {
+  pieces: Piece[];
+}
+
+const { pieces } = Astro.props;
+const filters = [
+  ['all', 'Todas'],
+  ['ceramica', categories.ceramica],
+  ['restauro', categories.restauro],
+  ['personalizado', categories.personalizado],
+  ['pintura', categories.pintura],
+  ['ilustracao', categories.ilustracao],
+] as const;
+---
+
+<section class="section" id="obras">
+  <div class="container section-head">
+    <div>
+      <p class="eyebrow">Obras selecionadas</p>
+      <h2 class="section-title">A estante</h2>
+    </div>
+    <div class="filters" role="group" aria-label="Filtrar obras">
+      {filters.map(([value, label], index) => (
+        <button
+          class="filter"
+          type="button"
+          data-filter={value}
+          aria-pressed={index === 0 ? 'true' : 'false'}
+        >
+          {label}
+        </button>
+      ))}
+    </div>
+  </div>
+  <div class="shelf">
+    <div class="shelf-track" data-shelf-track aria-label="Galeria de obras">
+      {pieces.map((piece, index) => (
+        <PieceCard piece={piece} index={index} />
+      ))}
+    </div>
+    <div class="shelf-foot container">
+      <span class="shelf-hint">Arrasta para explorar · {pieces.length} peças</span>
+      <div class="shelf-arrows">
+        <button class="shelf-arrow" type="button" data-shelf-prev aria-label="Obras anteriores">←</button>
+        <button class="shelf-arrow" type="button" data-shelf-next aria-label="Obras seguintes">→</button>
+      </div>
+    </div>
+  </div>
+</section>

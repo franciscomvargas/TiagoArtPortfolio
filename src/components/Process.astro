@@ -1,0 +1,56 @@
+---
+import { Picture } from 'astro:assets';
+import { image } from '../lib/images';
+
+const steps = [
+  {
+    title: 'Moldar',
+    text: 'A terra ganha forma entre as mãos. O gesto antes da máquina.',
+    image: image('processo/01.jpg'),
+  },
+  {
+    title: 'Detalhar',
+    text: 'Cada traço é esculpido e revisto até a peça ganhar expressão.',
+    image: image('processo/02.jpg'),
+  },
+  {
+    title: 'Pintar',
+    text: 'A cor traz a peça à vida e define o seu lugar no mundo.',
+    image: image('processo/03.jpg'),
+  },
+];
+---
+
+<section class="section section--paper2">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">O processo</p>
+        <h2 class="section-title">Da matéria<br />à forma final</h2>
+      </div>
+      <p class="section-intro">
+        Cada peça percorre o mesmo caminho: as mãos, o tempo e a cor. O
+        resultado nunca é exatamente igual ao anterior.
+      </p>
+    </div>
+    <div class="process-grid">
+      {steps.map((step, index) => (
+        <article class="process-card" data-reveal>
+          <Picture
+            src={step.image}
+            formats={['avif', 'webp']}
+            widths={[320, 540]}
+            sizes="(max-width: 720px) 90vw, 30vw"
+            alt={`${step.title} — processo de trabalho no ateliê`}
+            loading="lazy"
+          />
+          <div class="process-card-top">
+            <h3>{step.title}</h3>
+            <span>0{index + 1}</span>
+          </div>
+          <p>{step.text}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

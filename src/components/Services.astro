@@ -1,0 +1,40 @@
+---
+const services = [
+  {
+    title: 'Restauro',
+    text: 'Peças antigas com partes em falta ou danificadas são estudadas e reconstruídas à mão, mantendo o carácter original.',
+  },
+  {
+    title: 'Personalização',
+    text: 'Uma ideia, um tema ou uma peça com história. O ateliê transforma o pedido numa peça única — em cerâmica, pintura ou ilustração.',
+  },
+  {
+    title: 'Encomendas',
+    text: 'Peças decorativas e objetos personalizados, feitos por medida. Envio para Portugal e para a União Europeia.',
+  },
+];
+---
+
+<section class="section services" id="servicos">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">O que faço</p>
+        <h2 class="section-title">Do objeto<br />à peça única</h2>
+      </div>
+      <p class="section-intro">
+        O ponto de partida pode ser uma peça esquecida, um tema ou uma ideia
+        ainda por construir. O resultado é sempre feito à mão.
+      </p>
+    </div>
+    <div class="services-grid">
+      {services.map((service, index) => (
+        <article class="service" data-reveal>
+          <span class="service-number">0{index + 1}</span>
+          <h3>{service.title}</h3>
+          <p>{service.text}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

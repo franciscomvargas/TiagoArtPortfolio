@@ -1,0 +1,26 @@
+---
+import { site } from '../config';
+
+const mailto = `mailto:${site.email}?subject=${encodeURIComponent('Novo projeto — cerâmica / restauro')}&body=${encodeURIComponent('Olá Tiago,\n\nGostaria de falar contigo sobre um projeto.\n\nO que tenho em mente:\n\n\nObrigado(a),')}`;
+---
+
+<section class="contact" id="contacto">
+  <div class="container contact-inner">
+    <p class="eyebrow">Contacto</p>
+    <h2>Tem uma peça para restaurar ou uma ideia para concretizar?</h2>
+    <p>
+      Escreva com o que tem em mãos — uma peça antiga, um tema, uma ideia ainda
+      por definir. Respondo por email com os próximos passos.
+    </p>
+    <div class="contact-actions">
+      <a class="button button--light" href={mailto}>Enviar email</a>
+      <button class="button" type="button" data-copy-email data-email={site.email}>Copiar email</button>
+    </div>
+    <a class="contact-email" href={`mailto:${site.email}`}>{site.email}</a>
+    <div class="contact-meta">
+      <span>Encomendas personalizadas</span>
+      <span>Portugal e UE</span>
+      <span>{site.locationShort}</span>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,130 @@
+---
+import '@fontsource-variable/fraunces';
+import '@fontsource-variable/manrope';
+import '../styles/global.css';
+import { site } from '../config';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  type?: string;
+}
+
+const { title = site.title, description = site.description, image = '/og-default.jpg', type = 'website' } = Astro.props;
+const base = Astro.site ?? new URL(site.siteUrl);
+const canonical = new URL(Astro.url.pathname, base).href;
+const ogImage = image.startsWith('http') ? image : new URL(image, base).href;
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': ['Person', 'VisualArtist'],
+  name: site.name,
+  url: base.href,
+  image: ogImage,
+  jobTitle: 'Artista plástico',
+  description: site.description,
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Oliveira de Azeméis',
+    addressCountry: 'PT',
+  },
+  sameAs: [site.instagram, site.tiktok],
+};
+---
+
+<!doctype html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="index,follow" />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta name="theme-color" content="#f4efe7" />
+    <meta name="author" content="Tiago Costa" />
+    <meta property="og:type" content={type} />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:locale" content="pt_PT" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:alt" content={title} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    <slot name="head" />
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Saltar para o conteúdo</a>
+    <header class="site-header" data-header>
+      <div class="header-inner">
+        <a class="brand" href="/">
+          <span class="monogram">TC</span>
+          <span class="brand-name">Tiago Costa</span>
+        </a>
+        <nav class="nav" id="site-nav" aria-label="Navegação principal">
+          <a href="/#obras">Obras</a>
+          <a href="/#servicos">Serviços</a>
+          <a href="/#atelier">Ateliê</a>
+          <a href="/#contacto">Contacto</a>
+        </nav>
+        <div class="header-tools">
+          <a class="icon-link" href={site.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram de Tiago Costa">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+              <circle cx="12" cy="12" r="4"></circle>
+              <circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"></circle>
+            </svg>
+          </a>
+          <a class="icon-link" href={site.tiktok} target="_blank" rel="noopener noreferrer" aria-label="TikTok de Tiago Costa">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M16.6 3c.4 2.1 1.6 3.4 3.7 3.5v2.7c-1.4 0-2.7-.4-3.7-1.2v5.4c0 3.4-1.9 5.6-5 5.6-2.9 0-4.8-1.9-4.8-4.7 0-2.9 2.1-4.8 5.1-4.7v2.8c-1.4-.2-2.5.6-2.5 1.9 0 1.2.9 2 2.1 2 1.4 0 2.2-.9 2.2-2.6V3h2.9Z"></path>
+            </svg>
+          </a>
+          <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="site-nav" data-menu-toggle>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+    <main id="conteudo">
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <a class="brand" href="/">
+              <span class="monogram">TC</span>
+              <img class="footer-signature" src={site.signature} alt="Tiago Costa" width="160" height="87" loading="lazy" />
+            </a>
+            <p>Cerâmica, restauro, pintura e ilustração. Feito à mão em Oliveira de Azeméis.</p>
+          </div>
+          <nav class="footer-nav" aria-label="Navegação de rodapé">
+            <a href="/#obras">Obras</a>
+            <a href="/#servicos">Serviços</a>
+            <a href="/#atelier">Ateliê</a>
+            <a href="/#contacto">Contacto</a>
+          </nav>
+          <div class="footer-social">
+            <a href={site.instagram} target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href={site.tiktok} target="_blank" rel="noopener noreferrer">TikTok</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© <span data-year>2026</span> Tiago Costa</span>
+          <span>{site.locationShort} · Portugal</span>
+          <span>Peças únicas, feitas à mão</span>
+        </div>
+      </div>
+    </footer>
+    <script>
+      import '../scripts/site.js';
+    </script>
+  </body>
+</html>
